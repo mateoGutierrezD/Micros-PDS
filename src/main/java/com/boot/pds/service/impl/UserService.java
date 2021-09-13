@@ -14,7 +14,7 @@ import com.boot.pds.mapper.IMapperUser;
 import com.boot.pds.model.ResponseMensajeDto;
 import com.boot.pds.model.UserModel;
 import com.boot.pds.service.IUserService;
-import com.boot.pds.util.Constantes;
+import com.boot.pds.util.Constants;
 
 @Service
 public class UserService implements IUserService{
@@ -46,7 +46,7 @@ public class UserService implements IUserService{
 		registroUsuario.setName(datosUsuarioNuevo.getName());
 		registroUsuario.setLastname(datosUsuarioNuevo.getLastname());
 		iUserDao.save(registroUsuario);
-		respuestaMensaje.setMensajeRespuesta(Constantes.MENSAJE_REGISTRO);
+		respuestaMensaje.setMensajeRespuesta(Constants.MENSAJE_REGISTRO);
 		return respuestaMensaje;
 	}
 
@@ -55,10 +55,10 @@ public class UserService implements IUserService{
 		ResponseMensajeDto respuestaMensaje = new ResponseMensajeDto();
 		Optional<User> userData = iUserDao.findById(idUser);
 		if(!userData.isPresent()) {
-			throw new NoSuchElementException(Constantes.MENSAJE_REGISTRO_INEXISTENTE);
+			throw new NoSuchElementException(Constants.MENSAJE_REGISTRO_INEXISTENTE);
 		}else {
 			iUserDao.deleteById(idUser);
-			respuestaMensaje.setMensajeRespuesta(Constantes.MENSAJE_ELIMINACION_EXITOSA);
+			respuestaMensaje.setMensajeRespuesta(Constants.MENSAJE_ELIMINACION_EXITOSA);
 			return respuestaMensaje;
 		}
 		

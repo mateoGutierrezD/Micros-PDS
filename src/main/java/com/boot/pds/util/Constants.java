@@ -1,6 +1,6 @@
 package com.boot.pds.util;
 
-public class Constantes {
+public class Constants {
 
 	public static final String USER_CONTROLLER ="/users";
 	

@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boot.pds.model.ResponseMensajeDto;
 import com.boot.pds.model.UserModel;
 import com.boot.pds.service.IUserService;
-import com.boot.pds.util.Constantes;
+import com.boot.pds.util.Constants;
 
 @RestController
-@RequestMapping(Constantes.USER_CONTROLLER)
+@RequestMapping(Constants.USER_CONTROLLER)
 public class UserController {
 
 	private final IUserService iUserService;
